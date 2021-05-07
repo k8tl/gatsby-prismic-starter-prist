@@ -134,9 +134,12 @@ const RenderBody = ({ home, projects, meta }) => (
             ].concat(meta)}
         />
         <Hero>
-            <>
+            <h1>
                 {RichText.render(home.hero_title)}
-            </>
+            </h1>
+<p>
+{RichText.render(home.hero_subtitle)}
+</p>
             <a href={home.hero_button_link.url}
                target="_blank" rel="noopener noreferrer">
                 <Button>
@@ -197,6 +200,7 @@ export const query = graphql`
                 edges {
                     node {
                         hero_title
+    hero_subtitle
                         hero_button_text
                         hero_button_link {
                             ... on PRISMIC__ExternalLink {
